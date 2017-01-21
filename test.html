@@ -1,0 +1,122 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>ポイント残高照会</title>
+  <link rel="stylesheet" type="text/css" href="stylesheet.css">
+  <link rel="stylesheet" type="text/css" href="test.css">
+
+  <link rel="shortcut icon" href="https://d2aoqdvxj7ngt6.cloudfront.net/pc/favicon.ico" type="image/vnd.microsoft.icon" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <div class="header-left">
+        <img class="logo" src="https://qiita-image-store.s3.amazonaws.com/0/89142/10dbeb6b-98cb-1269-eab5-3b11c9d331fc.png ">
+      </div>
+      <!-- ここにメニューアイコンを追加してください -->
+      <span class="fa fa-bars menu-icon"></span>
+
+
+    </div>
+  </header>
+
+  <div class="signup-modal-wrapper" id="signup-modal">
+    <div class="modal">
+      <div class="close-modal">
+        <i class="fa fa-2x fa-times"></i>
+      </div>
+      <div id="signup-form">
+        <h2>ポイント送金</h2>
+        <form action="./test.html">
+          <input class="form-control" type="text" placeholder="相手のID">
+          <input class="form-control" type="password" placeholder="送金ポイント額">
+          <button type="submit" id="submit-btn">送金</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+
+
+  <form name="myForm" method="post" action="" autocomplete="off">
+    <div id="wrap" class="subpage">
+
+      <!--gnavi-->
+      <div class="gnavi"><hr /></div>
+      <!--gnavi-->
+      <div id="contents_wrap" class="clearfix">
+        <div class="side_area">
+          <div class="main_links">
+          </div><!--main_links-->
+
+        </div><!--side_area-->
+        <div class="contents_area">
+          <br>
+          <h2>残高・利用履歴の確認</h2>
+          <div class="column">
+            <div class="innerColum">
+              <h4>ポイント 残高</h4>
+              <table class="zandakaTb">
+                <tr>
+                  <th colspan="2">ポイント基本残高</th>
+                </tr>
+                <tr>
+                  <td>(有効期限：2021/01/21)</td>
+                  <td class="v_suti">415 円分</td>
+                </tr>
+                <tr>
+                  <td class="gokei">合計</td>
+                  <td class="suti"><strong>415</strong>円分</td>
+                </tr>
+              </table>
+
+            </div>
+          </div>
+
+          <h3>残高履歴</h3>
+          <table class="point_table">
+            <thead>
+              <tr>
+                <th class="days"><p>取引日</p></th>
+                <th><p>店舗</p></th>
+                <th><p>ご利用金額</p></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><p>2017/01/21 15:37</p></td>
+                <td><p>リオン・ドール 神明通り</p></td>
+                <td><p class="t_right">590円分 ご利用</p></td>
+              </tr>
+              <tr>
+                <td><p>2017/01/21 15:30</p></td>
+                <td><p>(リオン・ドール限定バリュー残高)</p></td>
+                <td><p class="t_right">5円分 獲得</p></td>
+              </tr>
+              <tr>
+                <td><p>2017/01/21 15:30</p></td>
+                <td><p>リオン・ドール 神明通り</p></td>
+                <td><p class="t_right">1,000円分 チャージ</p></td>
+              </tr>
+
+            </tbody>
+          </table>
+
+          <span class="btn message signup-show">ポイント送金</span>
+
+        </div>
+      </div>
+      <footer>
+        <div class="container">
+          <img src="https://qiita-image-store.s3.amazonaws.com/0/89142/d6f58bb8-25a6-0a7e-c8bb-190093312eaa.jpeg">
+        </div>
+      </footer>
+    </div>
+  </form>
+
+<script src="script.js"></script>
+</body>
+</html>
