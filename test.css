@@ -61,7 +61,7 @@ a:hover { text-decoration:none;}
 /*===================g navi=========================*/
 .gnavi {
 	width:100%;
-	background:#64b748 url(../../images/gnavi_bg.jpg) repeat-x;
+	background:#64b748  repeat-x;
 	height:5px;
 	margin-bottom:12px;
 }

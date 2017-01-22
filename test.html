@@ -1,16 +1,20 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta charset="utf-8">
   <title>ポイント残高照会</title>
   <link rel="stylesheet" type="text/css" href="stylesheet.css">
   <link rel="stylesheet" type="text/css" href="test.css">
-
   <link rel="shortcut icon" href="https://d2aoqdvxj7ngt6.cloudfront.net/pc/favicon.ico" type="image/vnd.microsoft.icon" />
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+  <script src="./iroha-javascript/test/lib/supercop.js"></script>
+  <script src="./iroha-javascript/test/lib/sha3.min.js"></script>
+  <script src="./iroha-javascript/src/iroha.js"></script>
+  <script src="./main.js"></script>
 </head>
-<body>
+
+
   <header>
     <div class="container">
       <div class="header-left">
@@ -60,16 +64,9 @@
             <div class="innerColum">
               <h4>ポイント 残高</h4>
               <table class="zandakaTb">
-                <tr>
-                  <th colspan="2">ポイント基本残高</th>
-                </tr>
-                <tr>
-                  <td>(有効期限：2021/01/21)</td>
-                  <td class="v_suti">415 円分</td>
-                </tr>
-                <tr>
+
                   <td class="gokei">合計</td>
-                  <td class="suti"><strong>415</strong>円分</td>
+                  <td class="suti"><strong class="balance">415</strong>Point</td>
                 </tr>
               </table>
             </div>

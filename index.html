@@ -2,13 +2,16 @@
 <html>
 <head>
   <meta charset="utf-8">
-<title>ポイント残高照会</title>
+  <title>ポイント残高照会</title>
   <link rel="stylesheet" type="text/css" href="stylesheet.css">
+  <link rel="stylesheet" type="text/css" href="test.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
-    <link rel="shortcut icon" href="https://d2aoqdvxj7ngt6.cloudfront.net/pc/favicon.ico" type="image/vnd.microsoft.icon" />
+  <link rel="shortcut icon" href="https://d2aoqdvxj7ngt6.cloudfront.net/pc/favicon.ico" type="image/vnd.microsoft.icon" />
   <script src="./iroha-javascript/test/lib/supercop.js"></script>
   <script src="./iroha-javascript/test/lib/sha3.min.js"></script>
+  <script src="./iroha-javascript/src/iroha.js"></script>
   <script src="./main.js"></script>
 </head>
 <body>
@@ -37,11 +40,13 @@
         <form action="./test.html">
           <input class="form-control" type="text" id="number" name="number" placeholder="カードID">
           <input class="form-control" type="password" placeholder="PIN">
-          <button type="submit" id="submit-btn" onclick="accountRegister()">新規登録</button>
+          <button class='close-modal' type="button" id="submit-btn" onclick="accountRegister()">新規登録</button>
         </form>
       </div>
     </div>
   </div>
+
+
 
   <div class="login-modal-wrapper" id="login-modal">
     <div class="modal">
@@ -53,7 +58,7 @@
         <form action="./test.html">
           <input class="form-control" type="text" id="number" name="number"placeholder="カードID">
           <input class="form-control" type="password" placeholder="PIN">
-          <button type="submit" id="submit-btn" onclick="getMyAccount()">ログイン</button>
+          <button class='close-modal' type="button" id="submit-btn" onclick="getMyAccount();getMyHistory();">ログイン</button>
         </form>
       </div>
     </div>
@@ -67,7 +72,12 @@
 
 
 
-  <div class="message-wrapper">
+
+
+
+
+
+  <div class="message-wrapper start">
     <div class="container">
       <div class="heading">
         <h2>Cogcaのidに紐付いたポイントの残高確認とポインントのやりとりができます</h2>
@@ -76,12 +86,93 @@
       <span class="btn message signup-show">新規登録</span>
     </div>
   </div>
-  <footer>
-    <div class="container">
-      <img src="https://qiita-image-store.s3.amazonaws.com/0/89142/d6f58bb8-25a6-0a7e-c8bb-190093312eaa.jpeg">
-    </div>
-  </footer>
 
-   <script src="script.js"></script>
+
+    <div class="message-wrapper">
+      <div class="signup-modal-wrapper" id="signup-modal">
+        <div class="modal">
+          <div class="close-modal">
+            <i class="fa fa-2x fa-times"></i>
+          </div>
+          <div id="signup-form">
+            <h2>ポイント送金</h2>
+            <form action="./test.html">
+              <input class="form-control" type="text" id="number"placeholder="相手のID">
+              <input class="form-control" type="password" placeholder="送金ポイント額">
+              <button type="submit" id="submit-btn" >送金</button>
+            </form>
+          </div>
+        </div>
+      </div>
+
+
+
+      <form name="myForm" method="post" action="" autocomplete="off">
+        <div id="wrap" class="subpage">
+
+          <!--gnavi-->
+          <div class="gnavi"><hr /></div>
+          <!--gnavi-->
+          <div id="contents_wrap" class="clearfix">
+            <div class="side_area">
+              <div class="main_links">
+              </div><!--main_links-->
+
+            </div><!--side_area-->
+            <div class="contents_area">
+              <br>
+              <h2>残高・利用履歴の確認</h2>
+              <div class="column">
+                <div class="innerColum">
+                  <h4>ポイント 残高</h4>
+                  <table class="zandakaTb">
+
+                    <td class="gokei">合計</td>
+                    <td class="suti"><strong class="balance"></strong>Point</td>
+                  </tr>
+                </table>
+              </div>
+            </div>
+
+            <h3>残高履歴</h3>
+            <table class="point_table">
+              <thead>
+                <tr>
+                  <th><p>ご利用金額</p></th>
+                </tr>
+              </thead>
+              <tbody class="zan">
+                <!-- <tr>
+                  <td><p>2017/01/21 15:37</p></td>
+                  <td><p>リオン・ドール 神明通り</p></td>
+                  <td><p class="t_right">590円分 ご利用</p></td>
+                </tr>
+                <tr>
+                  <td><p>2017/01/21 15:30</p></td>
+                  <td><p>(リオン・ドール限定バリュー残高)</p></td>
+                  <td><p class="t_right">5円分 獲得</p></td>
+                </tr>
+                <tr>
+                  <td><p>2017/01/21 15:30</p></td>
+                  <td><p>リオン・ドール 神明通り</p></td>
+                  <td><p class="t_right">1,000円分 チャージ</p></td>
+                </tr> -->
+
+              </tbody>
+            </table>
+
+            <span class="btn message signup-show">ポイント送金</span>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer>
+      <div class="container">
+        <img src="https://qiita-image-store.s3.amazonaws.com/0/89142/d6f58bb8-25a6-0a7e-c8bb-190093312eaa.jpeg">
+      </div>
+  </footer>
+  <script src="script.js"></script>
 </body>
 </html>

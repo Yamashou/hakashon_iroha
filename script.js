@@ -12,10 +12,10 @@ $(function() {
     $('#login-modal').fadeOut();
     $('#signup-modal').fadeOut();
   });
-  
+
   $('.lesson-hover').hover(
     function() {
-      $(this).find('.text-contents').addClass('text-active'); 
+      $(this).find('.text-contents').addClass('text-active');
     },
     function() {
       $(this).find('.text-contents').removeClass('text-active');
@@ -25,20 +25,20 @@ $(function() {
   // FAQのアコーディオン
   $('.faq-list-item').click(function() {
     var $answer = $(this).find('.answer');
-    if($answer.hasClass('open')) { 
+    if($answer.hasClass('open')) {
       $answer.removeClass('open');
       // slideUpメソッドを用いて、$answerを隠してください
       $answer.slideUp();
       // 子要素のspanタグの中身をtextメソッドを用いて書き換えてください
       $(this).find('span').text('+');
     } else {
-      $answer.addClass('open'); 
+      $answer.addClass('open');
       // slideDownメソッドを用いて、$answerを表示してくださ
       $answer.slideDown();
       $(this).find('span').text('-');
       // 子要素のspanタグの中身をtextメソッドを用いて書き換えてください
-      
-      
+
+
     }
   });
 });

@@ -19,8 +19,12 @@ function requestAjax(url, type, data = ""){
 };
 
 function getNumber(){
+  console.log(document.getElementById("number").value);
   return document.getElementById("number").value;
 }
+
+
+
 function getReceiver(){
   return document.getElementById("receiver").value;
 }
@@ -64,10 +68,11 @@ function accountRegister(){
 function getMyAccount(){
   const alias = getNumber();
   const userInfo = JSON.parse(localStorage.getItem(alias))
-  console.log(userInfo);
+  // console.log(userInfo);
   const uuidParams = {uuid: userInfo.uuid};
   return requestAjax('http://45.76.148.248:80/account', 'GET' ,uuidParams).done((response) => {
     console.log(response);
+     $('.balance').text(response.assets[0]["value"])
     return response;
   });
 }
@@ -76,7 +81,14 @@ function getMyHistory(){
   const alias = getNumber();
   const uuidParams = {uuid: JSON.parse(localStorage.getItem(alias)).uuid};
   return requestAjax('http://45.76.148.248:80/history/transaction', 'GET' ,uuidParams).done((response) => {
-    console.log(response);
+    console.log(response.history);
+    $.each(response.history,function(i,val){
+      console.log(val.params["value"]);
+      const num = val.params["value"]
+      const t = '<tr><td><p>'+ num.toString()+ ' </p></td></tr>';
+      $(t).appendTo('.zan');
+    });
+    // console.log(response);
     return response;
   });
 }
@@ -108,13 +120,19 @@ function execCom(){
       signature: signature,
       timestamp: Date.now()
     })
-    console.log(commandParams);
+    // console.log(commandParams);
     return requestAjax('http://45.76.148.248:80/asset/operation', 'POST' ,commandParams).done((response) => {
-      console.log(response);
+      console.log(response.history);
+      $.each(response.history,function(i,val){
+        console.log(val.params["value"]);
+        // const t = '<tr><td><p>'+ val.params[]+ ' </p></td></tr>';
+        // $(t).appendTo('tbody');
+      });
       return response;
     })
   })
 }
+
 
 //俺のアカウント & 魔法の呪文
 function fire(){
